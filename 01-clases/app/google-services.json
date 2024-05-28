@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "365157652323",
+    "project_id": "cbem-2024a-sw-gr2",
+    "storage_bucket": "cbem-2024a-sw-gr2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365157652323:android:f7baff0b3f355f2f75e556",
+        "android_client_info": {
+          "package_name": "com.example.a2024aswgr2cbem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4IOxjLYSmReWHwvbkMovumvK8HTf5JzM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
