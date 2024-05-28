@@ -1,2 +1,0 @@
-Bad bunny,1995-04-12,false,29,1.75,Perrea sola
-Mardix,2001-04-07,true,23,1.79,jodido;Dale tu muevelo
