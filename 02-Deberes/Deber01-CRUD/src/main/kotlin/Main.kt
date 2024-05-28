@@ -76,7 +76,7 @@ fun main() {
     val artistaActualizado = Artista("Bad bunny", formatoFecha.parse("1995-04-12"), false, 29, 1.75, cancionesBenito)
     Artista.updateFileArtista(artista2, artistaActualizado)
 
-    // Leer canciones del archivo después de la actualización
+    // Leer artistas del archivo después de la actualización
     val artistasActualizados = Artista.readFromFileArtista()
     println("Artistas después de la actualización:")
     artistasActualizados.forEach { println("Artista: ${it.nombreArtistico}")}
