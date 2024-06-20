@@ -30,11 +30,6 @@ class Cancion (
         //Escribir canción
 
         fun writeToFileCancion(cancion: Cancion) {
-            /*val file = File(filePath)
-            val dateFormat = SimpleDateFormat("yyyy-MM-dd")*/
-            //agregar texto sin subrescribir lo anterior
-            /*file.appendText("${cancion.nombre},${dateFormat.format(cancion.fechaDeLanzamiento)},${cancion.popular},${cancion.anio},${cancion.duracion}\n")
-            println("canción ${cancion.nombre} ingresadas al archivo")*/
             if(buscarCancion(cancion.nombre)!=null){
                 println("canción ${cancion.nombre} ya ingresada")
             }else{
@@ -59,14 +54,6 @@ class Cancion (
 
             return cancionesFromFile
 
-            /*if (!file.exists()) {
-                return emptyList()
-            }
-            return file.readLines().map {
-                val parts = it.split(",")
-                val dateFormat = SimpleDateFormat("yyyy-MM-dd")
-                Cancion(parts[0],dateFormat.parse(parts[1]),parts[2].toBoolean(),parts[3].toInt(),parts[4].toDouble())
-            }*/
         }
 
         //Actualizar Cancion

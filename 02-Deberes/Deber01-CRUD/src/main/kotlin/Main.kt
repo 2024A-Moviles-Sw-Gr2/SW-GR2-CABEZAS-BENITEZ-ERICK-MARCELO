@@ -209,7 +209,7 @@ fun main() {
 
     } while (opc!=3)
     /*
-    /******************************EJEMPLO CRUD CANCIONES*****************************************/
+    /*****************************DESCOMENTAR PARA EJEMPLO CRUD CANCIONES Y ARTISTAS*****************************************/
     //Creamos los archivos
     Cancion.createFileCancion(Cancion.filePath)
     Artista.createFileArtista(Artista.filePath)

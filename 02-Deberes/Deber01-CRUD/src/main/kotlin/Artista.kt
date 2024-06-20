@@ -32,11 +32,6 @@ class Artista(
 
         //Escribir Artista
         fun writeToFileArtista(artista: Artista) {
-            /*val file = File(Artista.filePath)
-            val dateFormat = SimpleDateFormat("yyyy-MM-dd")
-            val cancionesString = artista.canciones.map { it.nombre }.joinToString(separator = ";")
-            file.appendText("${artista.nombreArtistico},${dateFormat.format(artista.fechaDeNacimiento)},${artista.retirado},${artista.edad},${artista.estatura},$cancionesString\n")
-            println("Artista ${artista.nombreArtistico} ingresadas al archivo")*/
             if(buscarArtista(artista.nombreArtistico)!=null){
                 println("Artista ${artista.nombreArtistico} ya ingresado.")
             }else{
@@ -50,21 +45,6 @@ class Artista(
 
         //Leer Artista
         fun readFromFileArtista(): List<Artista> {
-            /*val file = File(Artista.filePath)
-            if (!file.exists()) {
-                return emptyList()
-            }
-            val dateFormat = SimpleDateFormat("yyyy-MM-dd")
-            return file.readLines().map { line ->
-                val parts = line.split(",")
-                val nombreArtistico = parts[0]
-                val fechaDeNacimiento = dateFormat.parse(parts[1])
-                val retirado = parts[2].toBoolean()
-                val edad = parts[3].toInt()
-                val estatura = parts[4].toDouble()
-                val canciones = parts[5].split(";").map { Cancion.buscarCancion(it) }
-                Artista(nombreArtistico, fechaDeNacimiento, retirado, edad, estatura, ArrayList(canciones))
-            }*/
             val file = File(filePath)
 
             // Leer el contenido del archivo de texto
