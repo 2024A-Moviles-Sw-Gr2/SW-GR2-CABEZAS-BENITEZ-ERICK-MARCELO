@@ -1,4 +1,11 @@
 <resources>
-    <string name="app_name">2024ASWGR2CBEM</string>
-    <string name="saludo">el xavi es un papi</string>
+    <string name="app_name">MyApp</string>
+    <string name="saludo">default</string>
+
+    <string-array name="string_array_opciones">
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miercoles</item>
+    </string-array>>
+
 </resources>

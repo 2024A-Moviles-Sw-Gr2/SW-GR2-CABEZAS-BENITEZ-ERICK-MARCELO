@@ -3,7 +3,7 @@ import java.text.SimpleDateFormat
 
 fun main() {
     var opc=0
-
+//*********Prueba la app ingresando tus datos por consola*********///
     do {
         // Menu
         println("\n Ingrese la opción deseada: \n" +
@@ -209,6 +209,9 @@ fun main() {
 
     } while (opc!=3)
     /*
+    /////*****Prueba la app con este ejemplo y comentando lo anterior*******//////
+
+
     /*****************************DESCOMENTAR PARA EJEMPLO CRUD CANCIONES Y ARTISTAS*****************************************/
     //Creamos los archivos
     Cancion.createFileCancion(Cancion.filePath)
@@ -303,5 +306,7 @@ fun main() {
 
     val finalartistas = Artista.readFromFileArtista()
     println("Artistas después de agregar al artista eliminado:")
-    finalartistas.forEach { println("Artista: ${it.nombreArtistico}")}*/
+    finalartistas.forEach { println("Artista: ${it.nombreArtistico}")}
+    */
+
 }
