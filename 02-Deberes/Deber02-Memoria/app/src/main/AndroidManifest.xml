@@ -10,22 +10,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme._2024ASWGR2CBEM"
+        android:theme="@style/Theme.APPenMemoria"
         tools:targetApi="31">
         <activity
-            android:name=".FRecyclerView"
+            android:name=".CancionCrear"
             android:exported="false" />
         <activity
-            android:name=".ECrudEntrenador"
+            android:name=".Canciones"
             android:exported="false" />
         <activity
-            android:name=".CIntentExplicitoParametros"
+            android:name=".ArtistaActualizar"
             android:exported="false" />
         <activity
-            android:name=".BListView"
-            android:exported="false" />
-        <activity
-            android:name=".AcicloVida"
+            android:name=".ArtistaCrear"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

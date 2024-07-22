@@ -208,9 +208,8 @@ fun main() {
         }
 
     } while (opc!=3)
-    /*
+/*
     /////*****Prueba la app con este ejemplo y comentando lo anterior*******//////
-
 
     /*****************************DESCOMENTAR PARA EJEMPLO CRUD CANCIONES Y ARTISTAS*****************************************/
     //Creamos los archivos
@@ -307,6 +306,5 @@ fun main() {
     val finalartistas = Artista.readFromFileArtista()
     println("Artistas después de agregar al artista eliminado:")
     finalartistas.forEach { println("Artista: ${it.nombreArtistico}")}
-    */
-
+*/
 }
