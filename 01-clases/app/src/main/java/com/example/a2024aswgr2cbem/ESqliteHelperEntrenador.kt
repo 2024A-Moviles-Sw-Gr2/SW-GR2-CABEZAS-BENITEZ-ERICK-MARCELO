@@ -117,6 +117,4 @@ class ESqliteHelperEntrenador(
         return  if(arregloRespuesta.size>0) arregloRespuesta[0] else null
     }
 
-
-
 }

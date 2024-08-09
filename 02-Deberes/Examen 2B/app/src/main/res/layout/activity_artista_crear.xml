@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_new_art"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ArtistaCrear">
+
+    <EditText
+        android:id="@+id/txt_nombre_art"
+        android:layout_width="224dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Ingrese el nombre"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/txt_artistaCrear"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/txt_artistaCrear"
+        app:layout_constraintTop_toBottomOf="@+id/txt_artistaCrear" />
+
+    <TextView
+        android:id="@+id/txt_artistaCrear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ARTISTA"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.079" />
+
+    <EditText
+        android:id="@+id/txt_edad_art"
+        android:layout_width="220dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="Ingrese la edad"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/txt_nombre_art"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_nombre_art"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nombre_art" />
+
+    <Button
+        android:id="@+id/btn_guardar_art"
+        android:layout_width="167dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="#008805"
+        android:text="Guardar"
+        app:layout_constraintEnd_toEndOf="@+id/txt_edad_art"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="@+id/txt_edad_art"
+        app:layout_constraintTop_toBottomOf="@+id/txt_edad_art" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="317dp"
+        android:layout_height="354dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/btn_guardar_art"
+        app:layout_constraintTop_toBottomOf="@+id/btn_guardar_art"
+        app:srcCompat="@mipmap/cantando" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

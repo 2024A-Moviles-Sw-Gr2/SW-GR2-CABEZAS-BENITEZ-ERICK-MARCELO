@@ -3,15 +3,14 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("com.google.firebase.appdistribution")
     id("com.google.gms.google-services")
-    alias(libs.plugins.googleAndroidLibrariesMapsplatformSecretsGradlePlugin)
 }
 
 android {
-    namespace = "com.example.a2024aswgr2cbem"
+    namespace = "com.example.appenmemoria"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.a2024aswgr2cbem"
+        applicationId = "com.example.appenmemoria"
         minSdk = 27
         targetSdk = 34
         versionCode = 1
@@ -23,7 +22,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -32,9 +34,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
-    }
-    buildFeatures {
-        viewBinding = true
     }
 }
 
@@ -45,9 +44,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.play.services.maps)
-    implementation(libs.firebase.auth)
-    implementation ("com.firebaseui:firebase-ui-auth:7.2.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
