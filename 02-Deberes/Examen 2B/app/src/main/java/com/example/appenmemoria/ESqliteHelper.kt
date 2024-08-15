@@ -21,7 +21,9 @@ class ESqliteHelper(
                 CREATE TABLE ARTISTA(
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     nombre VARCHAR(50),
-                    edad INTEGER
+                    edad INTEGER,
+                    latitud DOUBLE,
+                    longitud DOUBLE
                 );
             """.trimIndent()
         db?.execSQL(scriptQLCrearTablaArtista)
@@ -43,12 +45,16 @@ class ESqliteHelper(
 
     fun crearArtista(
         nombre:String,
-        edad:Int
+        edad:Int,
+        latitud: Double,
+        longitud: Double
     ):Boolean{
         val basedatosEscritura = writableDatabase
         val valoresAGuardar = ContentValues()
         valoresAGuardar.put("nombre", nombre)
         valoresAGuardar.put("edad", edad)
+        valoresAGuardar.put("latitud", latitud)
+        valoresAGuardar.put("longitud", longitud)
         val resultadoGuardar = basedatosEscritura
             .insert(
                 "ARTISTA",// nomre tabla
@@ -73,12 +79,15 @@ class ESqliteHelper(
     }
 
     fun actualizarArtistaFormulario(
-        nombre:String, edad:Int, id:Int
+        nombre:String, edad:Int, id:Int, latitud: Double,
+        longitud: Double
     ):Boolean{
         val conexionEscritura = writableDatabase
         val valoresAActualizar= ContentValues()
         valoresAActualizar.put("nombre", nombre)
         valoresAActualizar.put("edad", edad)
+        valoresAActualizar.put("latitud", latitud)
+        valoresAActualizar.put("longitud", longitud)
         //where: ....
         val parametrosConsultaActualizar = arrayOf(id.toString())
         val resultadoActualizacion = conexionEscritura
@@ -110,7 +119,9 @@ class ESqliteHelper(
                 val artista = BArtista(
                     resultadoConsultaLectura.getInt(0),
                     resultadoConsultaLectura.getString(1),
-                    resultadoConsultaLectura.getInt(2)
+                    resultadoConsultaLectura.getInt(2),
+                    resultadoConsultaLectura.getDouble(3),
+                    resultadoConsultaLectura.getDouble(4)
                 )
                 arregloRespuestaArtista.add(artista)
             }while (resultadoConsultaLectura.moveToNext())
@@ -119,6 +130,40 @@ class ESqliteHelper(
         baseDatosLectura.close()
         // ESqLiteHelperEntrenador.consultarEntrenadorPorID
         return  arregloRespuestaArtista
+    }
+
+    fun consultarArtistaPorID(id:Int):BArtista?{
+        val baseDatosLectura= readableDatabase
+        val scriptConsultaLectura="""
+            SELECT * FROM ARTISTA WHERE ID = ?
+        """.trimIndent()
+        val arregloParametrosConsultaLectura= arrayOf(
+            id.toString()
+        )
+        val resultadoConsultaLectura = baseDatosLectura
+            .rawQuery(
+                scriptConsultaLectura,
+                arregloParametrosConsultaLectura
+            )
+        val existeALMenosUno= resultadoConsultaLectura
+            .moveToFirst()
+        val arregloRespuesta = arrayListOf<BArtista>()
+        if(existeALMenosUno){
+            do{
+                val artista = BArtista(
+                    resultadoConsultaLectura.getInt(0),
+                    resultadoConsultaLectura.getString(1),
+                    resultadoConsultaLectura.getInt(2),
+                    resultadoConsultaLectura.getDouble(3),
+                    resultadoConsultaLectura.getDouble(4)
+                )
+                arregloRespuesta.add(artista)
+            }while (resultadoConsultaLectura.moveToNext())
+        }
+        resultadoConsultaLectura.close()
+        baseDatosLectura.close()
+        // ESqLiteHelperEntrenador.consultarEntrenadorPorID
+        return  if(arregloRespuesta.size>0) arregloRespuesta[0] else null
     }
     /*************************************Canciones*****************************************************/
 

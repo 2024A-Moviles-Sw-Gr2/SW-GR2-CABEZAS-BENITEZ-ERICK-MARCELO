@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">APPenMemoria</string>
+    <string name="title_activity_maps_artista">MapsActivityArtista</string>
 </resources>

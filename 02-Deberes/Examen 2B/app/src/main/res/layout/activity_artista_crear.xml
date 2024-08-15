@@ -9,8 +9,8 @@
 
     <EditText
         android:id="@+id/txt_nombre_art"
-        android:layout_width="224dp"
-        android:layout_height="59dp"
+        android:layout_width="220dp"
+        android:layout_height="58dp"
         android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="Ingrese el nombre"
@@ -37,12 +37,11 @@
         android:id="@+id/txt_edad_art"
         android:layout_width="220dp"
         android:layout_height="56dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Ingrese la edad"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="@+id/txt_nombre_art"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/txt_nombre_art"
         app:layout_constraintTop_toBottomOf="@+id/txt_nombre_art" />
 
@@ -50,21 +49,59 @@
         android:id="@+id/btn_guardar_art"
         android:layout_width="167dp"
         android:layout_height="51dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="#008805"
         android:text="Guardar"
-        app:layout_constraintEnd_toEndOf="@+id/txt_edad_art"
-        app:layout_constraintHorizontal_bias="0.547"
-        app:layout_constraintStart_toStartOf="@+id/txt_edad_art"
-        app:layout_constraintTop_toBottomOf="@+id/txt_edad_art" />
+        app:layout_constraintEnd_toEndOf="@+id/txt_longitud_art"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="@+id/txt_longitud_art"
+        app:layout_constraintTop_toBottomOf="@+id/txt_longitud_art" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="317dp"
-        android:layout_height="354dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="212dp"
+        android:layout_height="226dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="@+id/btn_guardar_art"
         app:layout_constraintTop_toBottomOf="@+id/btn_guardar_art"
         app:srcCompat="@mipmap/cantando" />
+
+    <EditText
+        android:id="@+id/txt_latitud_art"
+        android:layout_width="218dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Ingrese latitud"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/txt_lugar_nacimiento"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_lugar_nacimiento"
+        app:layout_constraintTop_toBottomOf="@+id/txt_lugar_nacimiento" />
+
+    <EditText
+        android:id="@+id/txt_longitud_art"
+        android:layout_width="217dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="ingrese longitud"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/txt_latitud_art"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_latitud_art"
+        app:layout_constraintTop_toBottomOf="@+id/txt_latitud_art" />
+
+    <TextView
+        android:id="@+id/txt_lugar_nacimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Ubicación de nacimeinto:"
+        app:layout_constraintEnd_toEndOf="@+id/txt_edad_art"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_edad_art"
+        app:layout_constraintTop_toBottomOf="@+id/txt_edad_art" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,13 +27,17 @@ class ArtistaCrear : AppCompatActivity() {
         botonGuardar.setOnClickListener{
             val nombre = findViewById<EditText>(R.id.txt_nombre_art).text.toString()
             val edad = findViewById<EditText>(R.id.txt_edad_art).text.toString().toIntOrNull()
+            val latitud = findViewById<EditText>(R.id.txt_latitud_art).text.toString().toDoubleOrNull()
+            val longitud = findViewById<EditText>(R.id.txt_longitud_art).text.toString().toDoubleOrNull()
 
-            if (nombre.isNotEmpty() && edad != null) {
+            if (nombre.isNotEmpty() && edad != null && latitud!=null && longitud!=null) {
                 if (artistaId == -1) {
                     // Crear un nuevo artista
                     val respuesta = EBaseDatos.tablas!!.crearArtista(
                         nombre,
-                        edad
+                        edad,
+                        latitud,
+                        longitud
                     )
                     //val respuesta = BDatosMemoriaArt.crearArtista(nuevoArtista)
                     if (respuesta) {
@@ -43,7 +47,7 @@ class ArtistaCrear : AppCompatActivity() {
                     }
                 } else {
                     // Actualizar un artista existente
-                    val respuesta = EBaseDatos.tablas!!.actualizarArtistaFormulario(nombre,edad,artistaId )
+                    val respuesta = EBaseDatos.tablas!!.actualizarArtistaFormulario(nombre,edad,artistaId, latitud,longitud)
                     //val respuesta = BDatosMemoriaArt.actualizarArtista(artistaId, nuevoArtista)
 
                     if (respuesta) {

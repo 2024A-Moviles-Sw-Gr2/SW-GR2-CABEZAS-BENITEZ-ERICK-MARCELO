@@ -93,6 +93,12 @@ class MainActivity : AppCompatActivity() {
                 irActividad(Canciones::class.java, artistaId)
                 return true
             }
+            R.id.mi_ubicaacion -> {
+                mostrarSnackbar(
+                    "Ubicación $posicionItemSeleccionado")
+                irActividad(GMapsActivity::class.java, artistaId)
+                return true
+            }
             else -> super.onContextItemSelected(item)
         }
     }

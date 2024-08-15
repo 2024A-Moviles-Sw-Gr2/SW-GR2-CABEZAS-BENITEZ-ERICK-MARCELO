@@ -7,12 +7,16 @@ import java.util.ArrayList
 class BArtista(
     var id:Int,
     var nombre:String,
-    var edad: Int
+    var edad: Int,
+    var latitud: Double,
+    var longitud: Double
 ): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString()!!,
-        parcel.readInt()
+        parcel.readInt(),
+        parcel.readDouble(),
+        parcel.readDouble()
     ) {
     }
 
@@ -25,6 +29,8 @@ class BArtista(
         parcel.writeInt(id)
         parcel.writeString(nombre)
         parcel.writeInt(edad)
+        parcel.writeDouble(latitud)
+        parcel.writeDouble(longitud)
     }
 
     override fun describeContents(): Int {
